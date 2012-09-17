@@ -30,7 +30,7 @@ function valid_ip()
 function check_leases()
 {
     local  ip=$1
-    result=$(grep -n $1 /var/lib/dhcp/dhcpd.leases)
+    result=$(grep -n $1 /var/lib/dhcpd/dhcpd.leases)
     if [[ ${#result[@]} -gt 0 ]]; then
     	return 1
     else
@@ -63,7 +63,7 @@ function get_mac_address()
                                         print ether 
                                         
                                     }
-                        }' /var/lib/dhcp/dhcpd.leases | uniq)
+                        }' /var/lib/dhcpd/dhcpd.leases | uniq)
     #clean up
     export address=""
     echo $mac_address
